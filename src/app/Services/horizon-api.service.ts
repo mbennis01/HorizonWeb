@@ -105,4 +105,8 @@ export class HorizonApiService {
     dislikeBadge(idu, ida){
       return this.http.delete(this.url+"/RemoveLikeBadge/"+idu+"/"+ida);
     }
+
+    getSeuils(){
+      return this.http.get(this.url+"/seuils");
+    }
 }

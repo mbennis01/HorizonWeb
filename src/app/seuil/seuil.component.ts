@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HorizonApiService } from '../Services/horizon-api.service';
 
 @Component({
   selector: 'app-seuil',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeuilComponent implements OnInit {
 
-  constructor() { }
+  seuils;
+
+  constructor(private horizonApi : HorizonApiService) { }
 
   ngOnInit() {
+    this.horizonApi.getSeuils()
+    .subscribe((response)=>{
+      this.seuils = response.json();
+    })
   }
 
 }
