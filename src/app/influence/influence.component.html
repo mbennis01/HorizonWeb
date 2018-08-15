@@ -1,3 +1,76 @@
-<p>
-  influence works!
-</p>
+<div id="wrapper">
+    <h2> Table d'influence </h2>
+    <p> Chaque action selon l'utilisateur, son badge, se verra influencer un article d'une différente manière.</p>
+    
+    <div class="alert alert-info">
+      Ci-dessous ce que gagne un article par action d'un utilisateur sans badge.
+    </div>
+    
+    <table class="table table-bordered table-stripped table-dark">
+      <tr style="text-align: center;">
+        <td colspan="2">Utilisateur sans badge</td>
+      </tr>
+      
+      <tr>
+        <td>Like </td>
+        <td>Partage </td>
+      </tr>
+    
+      <tr>
+        <td> Influence : {{ influences.Like_no_badge }}</td>
+        <td> Influence : {{ influences.Share_no_badge }}</td>
+      </tr>
+    </table>
+    
+    <div class="alert alert-info">
+      Ci-dessous ce que gagne un utilisateur par action .
+    </div>
+    
+    <table class="table table-bordered table-stripped table-dark">
+        <tr style="text-align: center;">
+          <td colspan="2">Gain utilisateur par action</td>
+        </tr>
+        
+        <tr>
+          <td>Like </td>
+          <td>Partage </td>
+        </tr>
+      
+        <tr>
+          <td> Influence : {{ influences.User_for_like }}</td>
+          <td> Influence : {{ influences.User_for_share }}</td>
+        </tr>
+      </table>
+    
+      <div class="alert alert-info">
+        Ci-dessous ce que gagne l'article, en dépend de l'utilisateur et son badge.
+      </div>
+    
+      <table class="table table-bordered table-stripped table-dark">
+        <tr>
+          <td>Like bronze</td>
+          <td>{{ influences.Like_bronze }}</td>
+        </tr>
+        <tr>
+          <td>Like silver</td>
+          <td>{{ influences.Like_silver }}</td>
+        </tr>
+        <tr>
+          <td>Like gold</td>
+          <td>{{influences.Like_gold}}</td>
+        </tr>
+        <tr>
+          <td>Share bronze</td>
+          <td>{{influences.Share_bronze}}</td>
+        </tr>
+        <tr>
+          <td>Share silver</td>
+          <td>{{influences.Share_silver}}</td>
+        </tr>
+        <tr>
+          <td>Share gold</td>
+          <td>{{influences.Share_gold}}</td>
+        </tr>
+      </table>    
+</div>
+

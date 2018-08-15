@@ -37,7 +37,8 @@ const routes : Routes = [
     {path: 'userlist', component: UserListComponent, outlet: 'rightrouter'}, 
     {path: 'addadmin', component: AddAdminComponent, outlet: 'rightrouter'},
     {path: 'executor', component: ExecutorComponent, outlet: 'rightrouter'},
-    {path: 'seuil', component: SeuilComponent, outlet: 'rightrouter'}
+    {path: 'seuil', component: SeuilComponent, outlet: 'rightrouter'},
+    {path: 'influence', component: InfluenceComponent, outlet: 'rightrouter'}
   ]
   }
 ]

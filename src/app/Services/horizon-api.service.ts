@@ -121,4 +121,8 @@ export class HorizonApiService {
     updateGold(value : number){
       return this.http.put(this.url+"/seuilsgold", {Bronze : 0, Silver : 0, Gold: value});
     }
+
+    getInfluences(){
+      return this.http.get(this.url+"/influences");
+    }
 }

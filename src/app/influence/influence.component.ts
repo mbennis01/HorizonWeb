@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HorizonApiService } from '../Services/horizon-api.service';
 
 @Component({
   selector: 'app-influence',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfluenceComponent implements OnInit {
 
-  constructor() { }
+  influences; 
+
+  constructor(private horizonApi : HorizonApiService) { }
 
   ngOnInit() {
+    this.horizonApi.getInfluences()
+    .subscribe((response)=>{
+      this.influences = response.json();
+    })
   }
 
 }
