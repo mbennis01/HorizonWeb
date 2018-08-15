@@ -1,0 +1,18 @@
+<div id="login-main">
+
+  <div id="login-container">
+    <div id="login-header">
+      <img src="/LogoH.png" alt="logo-Horizon" height="50" width="150" style="margin-top: 20%;">      
+    </div>
+    <div style="padding: 30px;">
+        <button id="login-button" class="btn btn-block btn-social btn-facebook" (click)="loginFacebook()"> 
+            <span class="fa fa-facebook" style="font-size: 16px;"></span>
+            Login with Facebook 
+        </button>
+    </div>
+    <div *ngIf="message" class="alert alert-info"> {{ message }} </div>
+    <div *ngIf="error" class="alert alert-danger"> {{ error }} </div>
+
+  </div>
+</div>
+

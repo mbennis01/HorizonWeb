@@ -1,0 +1,33 @@
+<button class="btn btn-info"  (click)="goToAccueil()" style="color: white; margin-bottom: 20px;"> 
+  <i class="fa fa-home" aria-hidden="true"></i> Accueil 
+</button>
+
+<div id="template-favoris">
+  <div *ngFor="let article of likedArticles; index as i;" 
+    [style.backgroundColor]="(i % 2) ? '#F9F8F7' : 'white'" style="margin-top: 15px;" style="margin-top: 15px;"
+  > 
+    <p> {{article.PublishDate}} - {{ article.Categorie }} </p>
+    <img src="{{article.Image}}" alt="Image broken" class="accueil-images">
+    <p (click)="openLink(article.Link, $event)" class="accueil-links"> {{ article.Titre }} </p> 
+    <p>{{ article.Description }}</p>
+    <p> {{article.Source}} </p>
+
+    <button class="btn btn-sm btn-primary" (click)="shareOnFacebook(article.Link)">
+        <span><i class="fa fa-share" aria-hidden="true" ></i></span>
+        <span class="btn-txt"> Partage </span>   
+      </button>
+  
+      <button class="btn btn-sm" (click)="doLike(article)" 
+      [class.btn-danger]="!isLiked(article.Id)" 
+      [class.btn-success]="isLiked(article.Id)">
+        <span *ngIf="isLiked(article.Id)"><span class="btn-txt" > Aimé </span> <i class="fa fa-heart-o" aria-hidden="true"></i> </span>
+        <span *ngIf="!isLiked(article.Id)"><span class="btn-txt"> J'aime  </span> <i class="fa fa-heart-o" aria-hidden="true"></i></span>
+      </button>
+  
+      <button class="btn btn-sm btn-info" (click)="getComments(article.Id, article.Titre)">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <span class="btn-txt"> Commentaires </span> 
+      </button>
+
+  </div>
+</div>

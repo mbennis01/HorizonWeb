@@ -1,0 +1,28 @@
+<h3> List des utilisateurs </h3>
+
+
+<table class="table table-stripped table-bordered table-dark">
+  <tr>
+    <th>
+      Identifiant
+    </th>
+    <th>
+      Nom 
+    </th>
+    <th>
+      Role 
+    </th>
+  </tr>
+
+  <tr *ngFor="let user of users; index as i;">
+    <td>
+      {{user.Id_user}}
+    </td>
+    <td>
+      {{user.Nom}} 
+    </td>
+    <td [style.color]="(user.Role == 'admin') ? 'red' : 'none'">
+      {{user.Role}} 
+    </td>
+  </tr>
+</table>

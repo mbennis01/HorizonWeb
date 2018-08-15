@@ -1,0 +1,55 @@
+<h2>Ajouter un administrateur</h2>
+
+<div class="alert alert-danger">  
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+  Soyez donc sûrs de votre opération
+</div>
+
+<form #f="ngForm" (ngSubmit)="addAdmin(f.value.id_user, iduser)">
+  <div class="from-group">
+    <label for="id_user"> Identifiant : </label>
+    <input ngModel 
+    #iduser
+    name="id_user"
+    type="text"
+    class="form-control" 
+    id="id_user"/>
+  </div>
+<br><br>
+  <button class="btn btn-danger"> Valider </button>
+</form>
+
+<br><br>
+
+<div class="alert alert-danger" *ngIf="errorRaised">
+  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+  une erreur est survenue, assurez-vous de l'exactitude de l'identifiant, ou contactez le master web.
+</div>
+
+<br>
+<h2>Supprimer un administrateur</h2>
+
+
+<form #fr="ngForm" (ngSubmit)="removeAdmin(fr.value.idr, idr)">
+  <div class="from-group">
+    <label for="idr"> Identifiant : </label>
+    <input ngModel 
+    #idr
+    name="idr"
+    type="text"
+    class="form-control" 
+    id="idr"/>
+  </div>
+<br><br>
+  <button class="btn btn-danger"> Valider </button>
+</form>
+
+<br><br>
+
+<div class="alert alert-danger" *ngIf="errorRaised">
+  une erreur est survenue, assurez-vous de l'exactitude de l'identifiant, ou contactez le master web.
+</div>
+
+<div *ngIf="operationOk" class="alert alert-info">
+  <i class="fa fa-check-circle-o" aria-hidden="true"></i> Opération validée ! 
+</div>

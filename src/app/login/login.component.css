@@ -1,0 +1,83 @@
+#login-main{
+    margin-top: 20vh;
+    background-color: white;
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    -moz-box-shadow:    10px 8px 26px -6px #BDBDBD;
+    -webkit-box-shadow: 10px 8px 26px -6px #BDBDBD;
+    box-shadow:         10px 8px 26px -6px #BDBDBD;
+}
+
+#login-header{
+    background-image: url('/people.jpg');
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    height: 25vh;
+}
+
+#login-container{
+    margin-top: 10%;
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #login-main{
+        width: 70vw;
+    }
+
+    #login-button{
+        font-size: 10px;
+        color: white;
+    };    
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #login-main{
+        width: 50vw;
+    }
+
+    #login-button{
+        font-size: 10px;
+        color: white;
+    }    
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #login-main{
+        width: 50vw;
+    }
+
+    #login-button{
+        font-size: 14px;
+        color: white;
+    }    
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #login-main{
+        width: 30vw;
+    }
+
+    #login-button{
+        font-size: 16px;
+        color: white;
+    }    
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #login-main{
+        width: 30vw;
+    }
+
+    #login-button{
+        font-size: 18px;
+        color: white;
+    }    
+}

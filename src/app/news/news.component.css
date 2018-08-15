@@ -1,0 +1,90 @@
+#accueil-main{
+    height: 100vh;
+}
+
+#accueil-userbar{
+    background-color: #22252D;
+}
+
+.accueil-images{
+    width: 30vw;
+}
+
+#accueil-postbar{
+    overflow: auto;
+}
+
+.accueil-links{
+    color: #448AFF;
+}
+
+.accueil-links:hover{
+    text-decoration: underline;
+    color: #303F9F;    
+}
+
+#template-basic{
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+
+.btn{
+    margin: 0px 7.5px 0px 7.5px;
+}
+
+
+@media only screen and (max-width: 575.9px) {
+    .btn-txt{
+        font-size: 0px;
+    }
+    
+    *{
+        font-size: 10px;
+    }
+
+    img#accueil-userpicture{
+        height: 50%;
+        margin-top: 5vh; 
+        border-radius: 50%;
+    }
+
+    #accueil-userbar{
+        height: 30vh;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) and (max-width: 767.995px) {
+    .btn-txt{
+        font-size: 0px;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991.995px){
+    .btn-txt{
+        font-size: 0px;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199.995px){
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+#template-basic::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,
+											  #e4f5fc 0%,
+											  #bfe8f9 50%,
+											  #9fd8ef 51%,
+											  #2ab0ed 100%);
+}

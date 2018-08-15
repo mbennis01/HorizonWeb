@@ -1,0 +1,49 @@
+<h2>Commentaire : </h2>
+<h3> {{ titre }} </h3>
+
+<div *ngIf="!comments?.length">
+    Aucun commentaire disponible pour cet article ! Soyez le premier ! <i class="fa fa-smile-o" aria-hidden="true"></i>
+</div>
+<div>
+        <div id="wrapper">
+                <div *ngFor="let comment of comments; index as i;">
+                    <div  class="comment" 
+                    [style.backgroundColor]="(i % 2) ? 'white' : '#12A3B4'"
+                    [style.color]=" (i % 2) ? 'black' : 'white' " >
+                        <img src="{{comment.Picture}}" alt="{{comment.Nom}} Picture" class="photoDeProfil"/>
+                        <p> {{ comment.Nom }} </p>
+                        <p>  {{ comment.Contenu }} </p>
+                    </div>
+                </div>
+            </div>
+            <form #f="ngForm" (ngSubmit)="ajouterCommentaire(f)">
+                    <div class="form-group">
+                        <label for="commentaire" id="">Comment : </label>
+                        
+                        <textarea ngModel
+                        minlength="50" 
+                        maxlength="200"
+                        required
+                        name="commentaire"
+                        id="commentaire" 
+                        cols="10" 
+                        rows="2" 
+                        class="form-control" 
+                        #commentaire="ngModel">
+                        </textarea>
+                    </div>
+                    <div *ngIf="commentaire.errors?.minlength">
+                        Longueur de votre commentaire : {{ commentaire.errors?.minlength.actualLength }} 
+                    </div>
+                    <div class="alert alert-danger" *ngIf="!commentaire.valid && commentaire.touched" >
+                        <div *ngIf="commentaire.errors?.required">Pas de commentaires vides possibles.</div>
+                        <div *ngIf="commentaire.errors?.minlength"> Minimum de caractères autorisé est {{ commentaire.errors?.minlength.requiredLength }} </div>
+                    </div>
+                    <button class="btn btn-primary" [disabled]="!f.valid">
+                        Envoyer
+                    </button>
+            </form>
+</div>
+
+
+

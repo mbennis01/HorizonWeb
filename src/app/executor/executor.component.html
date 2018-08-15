@@ -1,0 +1,14 @@
+<h2> Executor MySQL </h2>
+
+<div class="alert alert-danger"> Cet outil est très dangereux, et est accessible seulement au Maître du site </div>
+
+<br><br>
+
+<form #f="ngForm" (ngSubmit)="executor(f.value.request)">
+  <div class="form-group">
+    <label for="request"> Request MySQL : </label>
+    <input ngModel type="text" class="form-control" id="request" name="request"/>
+  </div>
+
+  <button class="btn btn-primary"> Exécuter </button>
+</form>

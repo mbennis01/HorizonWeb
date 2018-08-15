@@ -1,0 +1,56 @@
+.accueil-images{
+    width: 30vw; 
+}
+
+#template-favoris{
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+.btn{
+    margin: 0px 7.5px 0px 7.5px;
+}
+
+
+
+@media only screen and (max-width: 575.9px) {
+    .btn-txt{
+        font-size: 0px;
+    }
+    
+    *{
+        font-size: 10px;
+    }
+
+    img#accueil-userpicture{
+        height: 50%;
+        margin-top: 5vh; 
+        border-radius: 50%;
+    }
+
+    #accueil-userbar{
+        height: 30vh;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) and (max-width: 767.995px) {
+    .btn-txt{
+        font-size: 0px;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991.995px){
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199.995px){
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

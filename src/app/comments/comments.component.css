@@ -1,0 +1,14 @@
+#wrapper{
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.comment{
+    padding: 10px;
+}
+
+.photoDeProfil{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
