@@ -1,14 +1,15 @@
 <h3> Vos scores et badges </h3>
 
+
 <table class="table table-bordered table-stripped" style="margin-top: 30px;">
   <tr>
     <td>
       <div class="row">
         <div class="col-md-8">Arts : {{+authService.currentUser.Score1}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score1 >= 10 && +authService.currentUser.Score1 < 20"> <img src="/assets/bronze1.png" alt="bronze1"> </div>
-          <div *ngIf="+authService.currentUser.Score1 >= 20 && +authService.currentUser.Score1 < 30">  <img src="/assets/silver1.png" alt="silver1"> </div>
-          <div *ngIf="+authService.currentUser.Score1 >= 30"> <img src="/assets/gold1.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score1 >= seuils?.Bronze && +authService.currentUser.Score1 < seuils?.Silver"> <img src="/assets/bronze1.png" alt="bronze1"> </div>
+          <div *ngIf="+authService.currentUser.Score1 >= seuils?.Silver && +authService.currentUser.Score1 < seuils?.Gold">  <img src="/assets/silver1.png" alt="silver1"> </div>
+          <div *ngIf="+authService.currentUser.Score1 >= seuils?.Gold"> <img src="/assets/gold1.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -17,9 +18,9 @@
       <div class="row">
         <div class="col-md-8">Business et économie : {{+authService.currentUser.Score2}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score2 >= 10 && +authService.currentUser.Score2 < 20"> <img src="/assets/bronze2.png" alt="bronze2"> </div>
-          <div *ngIf="+authService.currentUser.Score2 >= 20 && +authService.currentUser.Score2 < 30">  <img src="/assets/silver2.png" alt="silver2"> </div>
-          <div *ngIf="+authService.currentUser.Score2 >= 30"> <img src="/assets/gold2.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score2 >= seuils?.Bronze && +authService.currentUser.Score2 < seuils?.Silver"> <img src="/assets/bronze2.png" alt="bronze2"> </div>
+          <div *ngIf="+authService.currentUser.Score2 >= seuils?.Silver && +authService.currentUser.Score2 < seuils?.Gold">  <img src="/assets/silver2.png" alt="silver2"> </div>
+          <div *ngIf="+authService.currentUser.Score2 >= seuils?.Gold"> <img src="/assets/gold2.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -30,9 +31,9 @@
       <div class="row">
         <div class="col-md-8">Technologie : {{+authService.currentUser.Score3}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score3 >= 10 && +authService.currentUser.Score3 < 20"> <img src="/assets/bronze3.png" alt="bronze3"> </div>
-          <div *ngIf="+authService.currentUser.Score3 >= 20 && +authService.currentUser.Score3 < 30">  <img src="/assets/silver3.png" alt="silver3"> </div>
-          <div *ngIf="+authService.currentUser.Score3 >= 30"> <img src="/assets/gold3.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score3 >= seuils?.Bronze && +authService.currentUser.Score3 < seuils?.Silver"> <img src="/assets/bronze3.png" alt="bronze3"> </div>
+          <div *ngIf="+authService.currentUser.Score3 >= seuils?.Silver && +authService.currentUser.Score3 < seuils?.Gold">  <img src="/assets/silver3.png" alt="silver3"> </div>
+          <div *ngIf="+authService.currentUser.Score3 >= seuils?.Gold"> <img src="/assets/gold3.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -41,9 +42,9 @@
       <div class="row">
         <div class="col-md-8">Santé : {{+authService.currentUser.Score4}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score4 >= 10 && +authService.currentUser.Score4 < 20"> <img src="/assets/bronze4.png" alt="bronze4"> </div>
-          <div *ngIf="+authService.currentUser.Score4 >= 20 && +authService.currentUser.Score4 < 30">  <img src="/assets/silver4.png" alt="silver4"> </div>
-          <div *ngIf="+authService.currentUser.Score4 >= 30"> <img src="/assets/gold4.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score4 >= seuils?.Bronze && +authService.currentUser.Score4 < seuils?.Silver"> <img src="/assets/bronze4.png" alt="bronze4"> </div>
+          <div *ngIf="+authService.currentUser.Score4 >= seuils?.Silver && +authService.currentUser.Score4 < seuils?.Gold">  <img src="/assets/silver4.png" alt="silver4"> </div>
+          <div *ngIf="+authService.currentUser.Score4 >= seuils?.Gold"> <img src="/assets/gold4.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -54,9 +55,9 @@
       <div class="row">
         <div class="col-md-8">Vie domestique et maison : {{+authService.currentUser.Score5}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score5 >= 10 && +authService.currentUser.Score5 < 20"> <img src="/assets/bronze5.png" alt="bronze5"> </div>
-          <div *ngIf="+authService.currentUser.Score5 >= 20 && +authService.currentUser.Score5 < 30">  <img src="/assets/silver5.png" alt="silver5"> </div>
-          <div *ngIf="+authService.currentUser.Score5 >= 30"> <img src="/assets/gold5.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score5 >= seuils?.Bronze && +authService.currentUser.Score5 < seuils?.Silver"> <img src="/assets/bronze5.png" alt="bronze5"> </div>
+          <div *ngIf="+authService.currentUser.Score5 >= seuils?.Silver && +authService.currentUser.Score5 < seuils?.Gold">  <img src="/assets/silver5.png" alt="silver5"> </div>
+          <div *ngIf="+authService.currentUser.Score5 >= seuils?.Gold"> <img src="/assets/gold5.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -65,9 +66,9 @@
       <div class="row">
         <div class="col-md-8">Activité et loisirs : {{+authService.currentUser.Score6}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score6 >= 10 && +authService.currentUser.Score6 < 20"> <img src="/assets/bronze6.png" alt="bronze6"> </div>
-          <div *ngIf="+authService.currentUser.Score6 >= 20 && +authService.currentUser.Score6 < 30">  <img src="/assets/silver6.png" alt="silver6"> </div>
-          <div *ngIf="+authService.currentUser.Score6 >= 30"> <img src="/assets/gold6.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score6 >= seuils?.Bronze && +authService.currentUser.Score6 < seuils?.Silver"> <img src="/assets/bronze6.png" alt="bronze6"> </div>
+          <div *ngIf="+authService.currentUser.Score6 >= seuils?.Silver && +authService.currentUser.Score6 < seuils?.Gold">  <img src="/assets/silver6.png" alt="silver6"> </div>
+          <div *ngIf="+authService.currentUser.Score6 >= seuils?.Gold"> <img src="/assets/gold6.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -78,9 +79,9 @@
       <div class="row">
         <div class="col-md-8">Education : {{+authService.currentUser.Score7}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score7 >= 10 && +authService.currentUser.Score7 < 20"> <img src="/assets/bronze7.png" alt="bronze7"> </div>
-          <div *ngIf="+authService.currentUser.Score7 >= 20 && +authService.currentUser.Score7 < 30">  <img src="/assets/silver7.png" alt="silver7"> </div>
-          <div *ngIf="+authService.currentUser.Score7 >= 30"> <img src="/assets/gold7.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score7 >= seuils?.Bronze && +authService.currentUser.Score7 < seuils?.Silver"> <img src="/assets/bronze7.png" alt="bronze7"> </div>
+          <div *ngIf="+authService.currentUser.Score7 >= seuils?.Silver && +authService.currentUser.Score7 < seuils?.Gold">  <img src="/assets/silver7.png" alt="silver7"> </div>
+          <div *ngIf="+authService.currentUser.Score7 >= seuils?.Gold"> <img src="/assets/gold7.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -89,9 +90,9 @@
       <div class="row">
         <div class="col-md-8">Actualités : {{+authService.currentUser.Score8}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score8 >= 10 && +authService.currentUser.Score8 < 20"> <img src="/assets/bronze8.png" alt="bronze8"> </div>
-          <div *ngIf="+authService.currentUser.Score8 >= 20 && +authService.currentUser.Score8 < 30">  <img src="/assets/silver8.png" alt="silver8"> </div>
-          <div *ngIf="+authService.currentUser.Score8 >= 30"> <img src="/assets/gold8.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score8 >= seuils?.Bronze && +authService.currentUser.Score8 < seuils?.Silver"> <img src="/assets/bronze8.png" alt="bronze8"> </div>
+          <div *ngIf="+authService.currentUser.Score8 >= seuils?.Silver && +authService.currentUser.Score8 < seuils?.Gold">  <img src="/assets/silver8.png" alt="silver8"> </div>
+          <div *ngIf="+authService.currentUser.Score8 >= seuils?.Gold"> <img src="/assets/gold8.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -102,9 +103,9 @@
       <div class="row">
         <div class="col-md-8">Science : {{+authService.currentUser.Score9}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score9 >= 10 && +authService.currentUser.Score9 < 20"> <img src="/assets/bronze9.png" alt="bronze9"> </div>
-          <div *ngIf="+authService.currentUser.Score9 >= 20 && +authService.currentUser.Score9 < 30">  <img src="/assets/silver9.png" alt="silver9"> </div>
-          <div *ngIf="+authService.currentUser.Score9 >= 30"> <img src="/assets/gold9.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score9 >= seuils?.Bronze && +authService.currentUser.Score9 < seuils?.Silver"> <img src="/assets/bronze9.png" alt="bronze9"> </div>
+          <div *ngIf="+authService.currentUser.Score9 >= seuils?.Silver && +authService.currentUser.Score9 < seuils?.Gold">  <img src="/assets/silver9.png" alt="silver9"> </div>
+          <div *ngIf="+authService.currentUser.Score9 >= seuils?.Gold"> <img src="/assets/gold9.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -113,9 +114,9 @@
       <div class="row">
         <div class="col-md-8">Shopping : {{+authService.currentUser.Score10}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score10 >= 10 && +authService.currentUser.Score10 < 20" <img src="/assets/bronze10.png" alt="bronze10"> ></div>
-          <div *ngIf="+authService.currentUser.Score10 >= 20 && +authService.currentUser.Score10 < 30">  <img src="/assets/silver10.png" alt="silver10"> </div>
-          <div *ngIf="+authService.currentUser.Score10 >= 30"> <img src="/assets/gold10.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score10 >= seuils?.Bronze && +authService.currentUser.Score10 < seuils?.Silver"> <img src="/assets/bronze10.png" alt="bronze10"></div>
+          <div *ngIf="+authService.currentUser.Score10 >= seuils?.Silver && +authService.currentUser.Score10 < seuils?.Gold">  <img src="/assets/silver10.png" alt="silver10"> </div>
+          <div *ngIf="+authService.currentUser.Score10 >= seuils?.Gold"> <img src="/assets/gold10.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -126,9 +127,9 @@
       <div class="row">
         <div class="col-md-8">Société : {{+authService.currentUser.Score11}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score11 >= 10 && +authService.currentUser.Score11 < 20" <img src="/assets/bronze11.png" alt="bronze11"> ></div>
-          <div *ngIf="+authService.currentUser.Score11 >= 20 && +authService.currentUser.Score11 < 30">  <img src="/assets/silver11.png" alt="silver11"> </div>
-          <div *ngIf="+authService.currentUser.Score11 >= 30"> <img src="/assets/gold11.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score11 >= seuils?.Bronze && +authService.currentUser.Score11 < seuils?.Silver"> <img src="/assets/bronze11.png" alt="bronze11"></div>
+          <div *ngIf="+authService.currentUser.Score11 >= seuils?.Silver && +authService.currentUser.Score11 < seuils?.Gold">  <img src="/assets/silver11.png" alt="silver11"> </div>
+          <div *ngIf="+authService.currentUser.Score11 >= seuils?.Gold"> <img src="/assets/gold11.png" alt=""></div>
         </div>
       </div>
     </td>
@@ -137,9 +138,9 @@
       <div class="row">
         <div class="col-md-8">Sport : {{+authService.currentUser.Score12}} </div>
         <div class="col-md-4">
-          <div *ngIf="+authService.currentUser.Score12 >= 10 && +authService.currentUser.Score12 < 202" <img src="/assets/bronze12.png" alt="bronze12"> ></div>
-          <div *ngIf="+authService.currentUser.Score12 >= 20 && +authService.currentUser.Score12 < 30">  <img src="/assets/silver12.png" alt="silver12"> </div>
-          <div *ngIf="+authService.currentUser.Score12 >= 30"> <img src="/assets/gold12.png" alt=""></div>
+          <div *ngIf="+authService.currentUser.Score12 >= seuils?.Bronze && +authService.currentUser.Score12 < seuils?.Silver"> <img src="/assets/bronze12.png" alt="bronze12"> </div>
+          <div *ngIf="+authService.currentUser.Score12 >= seuils?.Silver && +authService.currentUser.Score12 < seuils?.Gold">  <img src="/assets/silver12.png" alt="silver12"> </div>
+          <div *ngIf="+authService.currentUser.Score12 >= seuils?.Gold"> <img src="/assets/gold12.png" alt=""></div>
         </div>
       </div>
     </td>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
+import { HorizonApiService } from '../Services/horizon-api.service';
 
 @Component({
   selector: 'app-badge',
@@ -9,11 +10,17 @@ import { AuthService } from '../Services/auth.service';
 })
 export class BadgeComponent implements OnInit {
 
-  actualUser; 
+  actualUser;
+  seuils; 
 
-  constructor(private router : ActivatedRoute, public authService : AuthService) { }
+  constructor(private router : ActivatedRoute, public authService : AuthService, private horizonApi : HorizonApiService) { }
 
   ngOnInit() {
+    this.horizonApi.getSeuils()
+    .subscribe((response)=>{
+      this.seuils = response.json();
+      console.log(this.seuils);
+    })
   }
 
 }

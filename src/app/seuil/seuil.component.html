@@ -8,39 +8,44 @@
   </tr>
 
   <tr>
-    <td>Seuil actuel : {{seuils.Bronze}}  </td>
-    <td>Seuil actuel : {{seuils.Silver}} </td>
-    <td>Seuil actuel : {{seuils.Gold}} </td>
+    <td>Seuil actuel : {{seuils?.Bronze}}  </td>
+    <td>Seuil actuel : {{seuils?.Silver}} </td>
+    <td>Seuil actuel : {{seuils?.Gold}} </td>
   </tr>
 
   <tr>
     <td>
-        <form>
+        <form #fBronze="ngForm" (ngSubmit)="updateBronze(fBronze.value.seuilbronze, seuilbronze)">
           <div class="form-group">
             <label for="seuilbronze"> Nouveau Seuil :</label>
-            <input type="text" id="seuilbronze" name="seuilbronze" class="form-control">
-          </div>
-        </form>
-        <button class="btn btn-primary btn-sm"> Changer </button>
-      </td>
-      <td>
-        <form>
-          <div class="form-group">
-            <label for="seuilsilver"> Nouveau Seuil :</label>
-            <input type="text" id="seuilsilver" name="seuilsilver" class="form-control">
+            <input #seuilbronze ngModel type="text" id="seuilbronze" name="seuilbronze" class="form-control">
           </div>
           <button class="btn btn-primary btn-sm"> Changer </button>
         </form>
       </td>
       <td>
-        <form>
+        <form #fSilver="ngForm" (ngSubmit)="updateSilver(fSilver.value.seuilsilver, seuilsilver)">
+          <div class="form-group">
+            <label for="seuilsilver"> Nouveau Seuil :</label>
+            <input #seuilsilver ngModel type="text" id="seuilsilver" name="seuilsilver" class="form-control">
+          </div>
+          <button class="btn btn-primary btn-sm"> Changer </button>
+        </form>
+      </td>
+      <td>
+        <form #fGold="ngForm" (ngSubmit)="updateGold(fGold.value.seuilgold, seuilgold)">
           <div class="form-group">
             <label for="seuilgold"> Nouveau Seuil :</label>
-            <input type="text" id="seuilgold" name="seuilgold" class="form-control">
-
+            <input #seuilgold ngModel type="text" id="seuilgold" name="seuilgold" class="form-control">
           </div>
           <button class="btn btn-primary btn-sm"> Changer </button>
         </form>
     </td>
   </tr>
 </table>
+
+<br>
+
+<div *ngIf="actionResponse">
+  <i class="fa fa-commenting" aria-hidden="true"></i> &nbsp; {{ actionResponse }}
+</div>

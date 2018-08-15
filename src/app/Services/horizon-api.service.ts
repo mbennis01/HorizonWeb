@@ -109,4 +109,16 @@ export class HorizonApiService {
     getSeuils(){
       return this.http.get(this.url+"/seuils");
     }
+
+    updateBronze(value : number){
+      return this.http.put(this.url+"/seuilsbronze", {Bronze : value, Silver : 0, Gold: 0});
+    }
+
+    updateSilver(value : number){
+      return this.http.put(this.url+"/seuilssilver", {Bronze : 0, Silver : value, Gold: 0});
+    }
+
+    updateGold(value : number){
+      return this.http.put(this.url+"/seuilsgold", {Bronze : 0, Silver : 0, Gold: value});
+    }
 }
