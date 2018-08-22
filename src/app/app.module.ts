@@ -13,7 +13,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { TestComponent } from './test/test.component';
 import { FavorisComponent } from './favoris/favoris.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationComponent } from './pagination/pagination.component';
 import { BadgeComponent } from './badge/badge.component';
 import { AuthService } from './Services/auth.service';
@@ -61,7 +61,8 @@ const routes : Routes = [
     FacebookModule.forRoot(), 
     RouterModule.forRoot(routes),
     HttpModule, 
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [FbService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]

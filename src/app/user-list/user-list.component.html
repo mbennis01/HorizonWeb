@@ -1,5 +1,8 @@
 <h3> List des utilisateurs </h3>
 
+<div class="alert alert-info" *ngIf="message">
+  {{ message }}
+</div>
 
 <table class="table table-stripped table-bordered table-dark">
   <tr>
@@ -19,10 +22,16 @@
       {{user.Id_user}}
     </td>
     <td>
-      {{user.Nom}} 
+      {{user.Nom}} <span *ngIf="user.Nom == authService.currentUser.Nom" style="color: green;"> (Vous) </span>
     </td>
     <td [style.color]="(user.Role == 'admin') ? 'red' : 'none'">
-      {{user.Role}} 
+      {{user.Role}} <br>
+      <span *ngIf="user.Badge == '1' && user.Id_user != authService.currentUser.Id_user">
+        <button  class="btn btn-warning" (click)="removeBadge(user)"> retirer Badge </button>
+      </span> 
+      <span *ngIf="user.Badge == '0' && user.Id_user != authService.currentUser.Id_user">
+          <button  class="btn btn-success" (click)="giveBadge(user)"> Donner Badge </button>
+      </span> 
     </td>
   </tr>
 </table>

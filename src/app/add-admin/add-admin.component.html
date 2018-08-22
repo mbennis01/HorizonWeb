@@ -1,55 +1,81 @@
 <h2>Ajouter un administrateur</h2>
 
-<div class="alert alert-danger">  
-  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-  Soyez donc sûrs de votre opération
-</div>
-
-<form #f="ngForm" (ngSubmit)="addAdmin(f.value.id_user, iduser)">
-  <div class="from-group">
-    <label for="id_user"> Identifiant : </label>
-    <input ngModel 
-    #iduser
-    name="id_user"
-    type="text"
-    class="form-control" 
-    id="id_user"/>
-  </div>
-<br><br>
-  <button class="btn btn-danger"> Valider </button>
-</form>
-
-<br><br>
-
-<div class="alert alert-danger" *ngIf="errorRaised">
-  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-  une erreur est survenue, assurez-vous de l'exactitude de l'identifiant, ou contactez le master web.
-</div>
-
-<br>
-<h2>Supprimer un administrateur</h2>
-
-
-<form #fr="ngForm" (ngSubmit)="removeAdmin(fr.value.idr, idr)">
-  <div class="from-group">
-    <label for="idr"> Identifiant : </label>
-    <input ngModel 
-    #idr
-    name="idr"
-    type="text"
-    class="form-control" 
-    id="idr"/>
-  </div>
-<br><br>
-  <button class="btn btn-danger"> Valider </button>
-</form>
-
-<br><br>
-
-<div class="alert alert-danger" *ngIf="errorRaised">
-  une erreur est survenue, assurez-vous de l'exactitude de l'identifiant, ou contactez le master web.
-</div>
-
-<div *ngIf="operationOk" class="alert alert-info">
-  <i class="fa fa-check-circle-o" aria-hidden="true"></i> Opération validée ! 
+<div id="wrapper">
+    <div class="alert alert-danger">  
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        Soyez donc sûrs de votre opération
+      </div>
+      
+      <form [formGroup]="fAddAdmin" (ngSubmit)="addAdmin()">
+        <div class="form-group">
+          <label for="id_user"> Identifiant : </label>
+          <input 
+          formControlName="id_user"
+          type="text"
+          class="form-control" 
+          id="id_user"/>
+      
+          
+          <div *ngIf="id_user.pending"> Vérification de la validation de l'identifiant ... </div>
+      
+          <div *ngIf="id_user.dirty && id_user.errors == null" class="alert alert-success"><i class="fa fa-check-circle" aria-hidden="true"></i>
+            Identifiant valide !  </div>
+      
+          <div class="alert alert-danger" *ngIf="id_user.touched && !id_user.valid">
+            <div *ngIf="id_user.errors?.required"> Obligatoire pour ajouter un admin </div>
+            <div *ngIf="id_user.errors?.pattern"> L'identifiant doit être composé seulement de nombre. </div>
+            <div *ngIf="id_user.errors?.shouldExist"> Cet identifiant n'existe pas.</div>
+          </div>
+          
+        </div>
+      <br><br>
+        <button class="btn btn-warning" [disabled]="!id_user.valid"> Valider </button>
+      </form>
+      
+      
+      <br><br>
+      
+      <div class="alert alert-danger" *ngIf="errorRaised">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        une erreur est survenue, assurez-vous de l'exactitude de l'identifiant, ou contactez le master web.
+      </div>
+      
+      <br>
+      <h2>Supprimer un administrateur</h2>
+      
+      
+      <form [formGroup]="fRemoveAdmin" (ngSubmit)="removeAdmin()">
+        <div class="from-group">
+          <label for="idr"> Identifiant : </label>
+          <input 
+          formControlName="idr"
+          type="text"
+          class="form-control" 
+          id="idr"/>
+      
+          <div *ngIf="idr.pending"> Vérification de la validation de l'identifiant ... </div>
+      
+          <div *ngIf="idr.dirty && idr.errors == null" class="alert alert-success"><i class="fa fa-check-circle" aria-hidden="true"></i>
+            Identifiant valide !  </div>
+      
+          <div class="alert alert-danger" *ngIf="idr.touched && !idr.valid">
+            <div *ngIf="idr.errors?.required"> Obligatoire pour ajouter un admin </div>
+            <div *ngIf="idr.errors?.pattern"> L'identifiant doit être composé seulement de nombre. </div>
+            <div *ngIf="idr.errors?.shouldExist"> Cet identifiant n'existe pas.</div>
+          </div>
+      
+        </div>
+      <br><br>
+        <button class="btn btn-warning" [disabled]="!idr.valid"> Valider </button>
+      </form>
+      
+      <br><br>
+      
+      <div class="alert alert-danger" *ngIf="errorRaised">
+        une erreur est survenue, assurez-vous de l'exactitude de l'identifiant, ou contactez le master web.
+      </div>
+      
+      <div *ngIf="operationOk" class="alert alert-info">
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i> Opération validée ! 
+      </div>
 </div>

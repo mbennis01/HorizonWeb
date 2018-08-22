@@ -31,6 +31,10 @@ export class NewsComponent implements OnInit {
     this.getLiked();
   }
 
+  openLink(link){
+    window.open(link,'popup','width=1200,height=700,scrollbars=no,resizable=no');  
+  }
+  
   getComments(id, titre){
     this.router.navigate(
       [{outlets: {'rightrouter': ['comments', id, titre]}}],

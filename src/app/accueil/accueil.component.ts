@@ -36,10 +36,6 @@ export class AccueilComponent implements OnInit {
     {relativeTo : this.route ,  skipLocationChange: true });
   }
  
-  openLink(link){
-    window.open(link,'popup','width=1200,height=700,scrollbars=no,resizable=no');  
-  }
-
   goToFavoris(){
     this.router.navigate(
       [{outlets: {'leftrouter':['favoris']}}], 

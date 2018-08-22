@@ -2,6 +2,10 @@
     <h2> Table d'influence </h2>
     <p> Chaque action selon l'utilisateur, son badge, se verra influencer un article d'une différente manière.</p>
     
+    <div *ngIf="message">
+        <i class="fa fa-commenting" aria-hidden="true"></i> &nbsp; {{ message }}
+    </div>
+
     <div class="alert alert-info">
       Ci-dessous ce que gagne un article par action d'un utilisateur sans badge.
     </div>
@@ -15,10 +19,40 @@
         <td>Like </td>
         <td>Partage </td>
       </tr>
-    
+
       <tr>
-        <td> Influence : {{ influences.Like_no_badge }}</td>
-        <td> Influence : {{ influences.Share_no_badge }}</td>
+        <td> Influence : {{ influences?.Like_no_badge }}</td>
+        <td> Influence : {{ influences?.Share_no_badge }}</td>
+      </tr>
+
+      <tr>
+          <td>
+            <form [formGroup]="fLikenobadge" (ngSubmit)="updateLike_no_badge()">
+              <div class="form-group">
+                <label for="Likenobadge"> nouvelle valeur:</label>
+                <input formControlName="Likenobadge" type="text" id="Likenobadge" class="form-control">
+              </div>
+              <button class="btn btn-warning btn-sm" [disabled]="Likenobadge.invalid"> Changer </button>
+            </form>
+            <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Likenobadge.touched && !Likenobadge.valid">
+               <div *ngIf="Likenobadge.errors?.required">Il faut remplir le champ pour le modifier !</div>
+               <div *ngIf="Likenobadge.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+            </div>
+          </td>
+
+          <td>
+            <form [formGroup]="fSharenobadge" (ngSubmit)="updateShare_no_badge()">
+              <div class="form-group">
+                <label for="Sharenobadge"> Nouvelle valeur:</label>
+                <input formControlName="Sharenobadge" type="text" id="Sharenobadge" class="form-control">
+              </div>
+              <button class="btn btn-warning btn-sm" [disabled]="Sharenobadge.invalid"> Changer </button>
+            </form>
+            <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Sharenobadge.touched && !Sharenobadge.valid">
+              <div *ngIf="Sharenobadge.errors?.required">Il faut remplir le champ pour le modifier !</div>
+              <div *ngIf="Sharenobadge.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+            </div>
+          </td>
       </tr>
     </table>
     
@@ -37,8 +71,37 @@
         </tr>
       
         <tr>
-          <td> Influence : {{ influences.User_for_like }}</td>
-          <td> Influence : {{ influences.User_for_share }}</td>
+          <td> Influence : {{ influences?.User_for_like }}</td>
+          <td> Influence : {{ influences?.User_for_share }}</td>
+        </tr>
+
+        <tr>
+          <td>
+            <form [formGroup]="fUserforlike" (ngSubmit)="updateUser_for_like()">
+              <div class="form-group">
+                <label for="Userforlike"> Nouvelle valeur:</label>
+                <input formControlName="Userforlike" type="text" id="Userforlike" class="form-control">
+              </div>
+              <button class="btn btn-warning btn-sm" [disabled]="Userforlike.invalid"> Changer </button>
+            </form>
+            <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Userforlike.touched && !Userforlike.valid">
+                <div *ngIf="Userforlike.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                <div *ngIf="Userforlike.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+            </div>
+          </td>
+          <td>
+            <form [formGroup]="fUserforshare" (ngSubmit)="updateUser_for_share()">
+              <div class="form-group">
+                <label for="Userforshare"> Nouvelle valeur:</label>
+                <input formControlName="Userforshare" type="text" id="Userforshare" class="form-control">
+              </div>
+              <button class="btn btn-warning btn-sm" [disabled]="Userforshare.invalid"> Changer </button>
+            </form>
+            <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Userforshare.touched && !Userforshare.valid">
+                <div *ngIf="Userforshare.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                <div *ngIf="Userforshare.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+            </div>
+          </td>
         </tr>
       </table>
     
@@ -49,27 +112,105 @@
       <table class="table table-bordered table-stripped table-dark">
         <tr>
           <td>Like bronze</td>
-          <td>{{ influences.Like_bronze }}</td>
+          <td>{{ influences?.Like_bronze }}</td>
+          <td>
+            <form [formGroup]="fLikebronze" (ngSubmit)="updateLike_bronze()">
+              <div class="form-group">
+                <label for="Likebronze"> Nouvelle valeur:</label>
+                <input formControlName="Likebronze" type="text" id="Likebronze" class="inlinecontrol form-control" style="margin: 0 7px 0 7px;">
+              </div>
+              <button class="btn btn-warning btn-sm" [disabled]="Likebronze.invalid"> Changer </button>
+            </form>
+            <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Likebronze.touched && !Likebronze.valid">
+                <div *ngIf="Likebronze.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                <div *ngIf="Likebronze.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>Like silver</td>
-          <td>{{ influences.Like_silver }}</td>
+          <td>{{ influences?.Like_silver }}</td>
+          <td>
+              <form  [formGroup]="fLikesilver" (ngSubmit)="updateLike_silver()">
+                <div class="form-group">
+                  <label for="Likesilver"> Nouvelle valeur:</label>
+                  <input formControlName="Likesilver" type="text" id="Likesilver" class="inlinecontrol form-control" style="margin: 0 7px 0 7px;">
+                </div>
+                <button class="btn btn-warning btn-sm" [disabled]="Likesilver.invalid"> Changer </button>
+              </form>
+              <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Likesilver.touched && !Likesilver.valid">
+                  <div *ngIf="Likesilver.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                  <div *ngIf="Likesilver.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+              </div>
+            </td>
         </tr>
         <tr>
           <td>Like gold</td>
-          <td>{{influences.Like_gold}}</td>
+          <td>{{influences?.Like_gold}}</td>
+          <td>
+              <form  [formGroup]="fLikegold" (ngSubmit)="updateLike_gold()">
+                <div class="form-group">
+                  <label for="Likegold"> Nouvelle valeur:</label>
+                  <input formControlName="Likegold" type="text" id="Likegold" class="inlinecontrol form-control" style="margin: 0 7px 0 7px;">
+                </div>
+                <button class="btn btn-warning btn-sm" [disabled]="Likegold.invalid"> Changer </button>
+              </form>
+              <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Likegold.touched && !Likegold.valid">
+                  <div *ngIf="Likegold.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                  <div *ngIf="Likegold.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+              </div>
+            </td>
         </tr>
         <tr>
           <td>Share bronze</td>
-          <td>{{influences.Share_bronze}}</td>
+          <td>{{influences?.Share_bronze}}</td>
+          <td>
+              <form  [formGroup]="fSharebronze" (ngSubmit)="updateShare_bronze()">
+                <div class="form-group">
+                  <label for="Sharebronze"> Nouvelle valeur:</label>
+                  <input formControlName="Sharebronze" type="text" id="Sharebronze" class="inlinecontrol form-control" style="margin: 0 7px 0 7px;">
+                </div>
+                <button class="btn btn-warning btn-sm" [disabled]="Sharebronze.invalid"> Changer </button>
+              </form>
+              <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Sharebronze.touched && !Sharebronze.valid">
+                  <div *ngIf="Sharebronze.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                  <div *ngIf="Sharebronze.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+              </div>
+            </td>
         </tr>
         <tr>
           <td>Share silver</td>
-          <td>{{influences.Share_silver}}</td>
+          <td>{{influences?.Share_silver}}</td>
+          <td>
+              <form  [formGroup]="fSharesilver" (ngSubmit)="updateShare_silver()">
+                <div class="form-group">
+                  <label for="Sharesilver"> Nouvelle valeur:</label>
+                  <input formControlName="Sharesilver" type="text" id="Sharesilver" class="inlinecontrol form-control" style="margin: 0 7px 0 7px;">
+                </div>
+                <button class="btn btn-warning btn-sm" [disabled]="Sharesilver.invalid"> Changer </button>
+              </form>
+              <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Sharesilver.touched && !Sharesilver.valid">
+                  <div *ngIf="Sharesilver.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                  <div *ngIf="Sharesilver.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+              </div>
+            </td>
         </tr>
         <tr>
           <td>Share gold</td>
-          <td>{{influences.Share_gold}}</td>
+          <td>{{influences?.Share_gold}}</td>
+          <td>
+              <form  [formGroup]="fSharegold" (ngSubmit)="updateShare_gold()">
+                <div class="form-group">
+                  <label for="Sharegold"> Nouvelle valeur:</label>
+                  <input formControlName="Sharegold" type="text" id="Sharegold" class="inlinecontrol form-control" style="margin: 0 7px 0 7px;">
+                </div>
+                <button class="btn btn-warning btn-sm" [disabled]="Sharegold.invalid"> Changer </button>
+              </form>
+              <div style="font-size: 8px; margin-top: 5px;" class="alert alert-danger" *ngIf="Sharegold.touched && !Sharegold.valid">
+                  <div *ngIf="Sharegold.errors?.required">Il faut remplir le champ pour le modifier !</div>
+                  <div *ngIf="Sharegold.errors?.pattern"> Vous ne pouvez rentrer que des nombres positifs</div>
+              </div>
+            </td>
         </tr>
       </table>    
 </div>

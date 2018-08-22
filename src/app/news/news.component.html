@@ -1,10 +1,11 @@
-<div> 
+<div id="wrapper"> 
     <h1> Page numéro : {{limitArticles + 1}} </h1>
     <div id="template-basic" #fullDiv>
         <div *ngFor="let article of articles; index as i;" 
         [style.backgroundColor]="(i % 2) ? '#F9F8F7' : 'white'" 
         style="margin-top: 15px;"> 
           <p> {{article.PublishDate}} - {{ article.Categorie }} </p>
+          <p> {{article.Link}} </p>
           <img src="{{article.Image}}" alt="Image broken" class="accueil-images">
           <p (click)="openLink(article.Link, $event)" class="accueil-links"> {{ article.Titre }} </p> 
           <p>{{ article.Description }}</p>

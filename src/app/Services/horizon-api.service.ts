@@ -125,4 +125,172 @@ export class HorizonApiService {
     getInfluences(){
       return this.http.get(this.url+"/influences");
     }
+
+    updateLike_no_badge(value: number){
+      return this.http.put(this.url+"/influencesLike_no_badge", 
+      {
+      Like_no_badge: value, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateShare_no_badge(value: number){
+      return this.http.put(this.url+"/influencesShare_no_badge", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: value, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateUser_for_like(value: number){
+      return this.http.put(this.url+"/influencesUser_for_like", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: value, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateUser_for_share(value: number){
+      return this.http.put(this.url+"/influencesUser_for_share", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: value, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateLike_bronze(value: number){
+      return this.http.put(this.url+"/influencesLike_bronze", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: value,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateLike_silver(value: number){
+      return this.http.put(this.url+"/influencesLike_silver", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: value, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateLike_gold(value: number){
+      return this.http.put(this.url+"/influencesLike_gold", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: value, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateShare_bronze(value: number){
+      return this.http.put(this.url+"/influencesShare_bronze", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: value, 
+      Share_silver: 0, 
+      Share_gold: 0
+      });
+    }
+
+    updateShare_silver(value: number){
+      return this.http.put(this.url+"/influencesShare_silver", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: value, 
+      Share_gold: 0
+      });
+    }
+
+    updateShare_gold(value: number){
+      return this.http.put(this.url+"/influencesShare_gold", 
+      {
+      Like_no_badge: 0, 
+      Share_no_badge: 0, 
+      User_for_like: 0, 
+      User_for_share: 0, 
+      Like_bronze: 0,
+      Like_silver: 0, 
+      Like_gold: 0, 
+      Share_bronze: 0, 
+      Share_silver: 0, 
+      Share_gold: value
+      });
+    }
+
+    giveBadge(value : number){
+      return this.http.put(this.url+"/badgeon/"+value, {});
+    }
+
+    removeBadge(value : number){
+      return this.http.put(this.url+"/badgeoff/"+value, {});
+    }
 }
