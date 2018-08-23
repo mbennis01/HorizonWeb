@@ -24,6 +24,7 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
 import { ExecutorComponent } from './executor/executor.component';
 import { SeuilComponent } from './seuil/seuil.component';
 import { InfluenceComponent } from './influence/influence.component';
+import { RegressionComponent } from './regression/regression.component';
 
 const routes : Routes = [
   {path: '', component: LoginComponent}, 
@@ -38,7 +39,8 @@ const routes : Routes = [
     {path: 'addadmin', component: AddAdminComponent, outlet: 'rightrouter'},
     {path: 'executor', component: ExecutorComponent, outlet: 'rightrouter'},
     {path: 'seuil', component: SeuilComponent, outlet: 'rightrouter'},
-    {path: 'influence', component: InfluenceComponent, outlet: 'rightrouter'}
+    {path: 'influence', component: InfluenceComponent, outlet: 'rightrouter'},
+    {path: 'regression', component: RegressionComponent, outlet: 'rightrouter'}
   ]
   }
 ]
@@ -54,7 +56,7 @@ const routes : Routes = [
     FavorisComponent, 
     PaginationComponent, 
     BadgeComponent, 
-    UsersAdminComponent, UserListComponent, AddAdminComponent, ExecutorComponent, SeuilComponent, InfluenceComponent,
+    UsersAdminComponent, UserListComponent, AddAdminComponent, ExecutorComponent, SeuilComponent, InfluenceComponent, RegressionComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 })
 export class HorizonApiService {
 
-  url : string = "http://localhost:64758/api/articles/";
+  url : string = "https://horizonapp.fr/backup/api/articles/";
   constructor(private http : Http){}
 
   checkUser(idu : string, nom : string){
@@ -292,5 +292,13 @@ export class HorizonApiService {
 
     removeBadge(value : number){
       return this.http.put(this.url+"/badgeoff/"+value, {});
+    }
+
+    getNewPoint(){
+      return this.http.get(this.url+"/newpoint");
+    }
+
+    setNewPoint(value : number){
+      return this.http.put(this.url+"/newpoint/"+value, {});
     }
 }
