@@ -25,6 +25,8 @@ import { ExecutorComponent } from './executor/executor.component';
 import { SeuilComponent } from './seuil/seuil.component';
 import { InfluenceComponent } from './influence/influence.component';
 import { RegressionComponent } from './regression/regression.component';
+import { NewsAdminComponent } from './news-admin/news-admin.component';
+import { SourceDataComponent } from './source-data/source-data.component';
 
 const routes : Routes = [
   {path: '', component: LoginComponent}, 
@@ -34,13 +36,15 @@ const routes : Routes = [
     {path: 'favoris', component: FavorisComponent, outlet: 'leftrouter'},
     {path: 'comments/:id/:titre', component: CommentsComponent, outlet: 'rightrouter'},
     {path: 'badges', component: BadgeComponent, outlet: 'leftrouter'},
-    {path: 'usersadmin', component: UsersAdminComponent, outlet: 'leftrouter'}, 
+    {path: 'usersadmin', component: UsersAdminComponent, outlet: 'leftrouter'},
+    {path: 'newsadmin', component: NewsAdminComponent, outlet: 'leftrouter'}, 
     {path: 'userlist', component: UserListComponent, outlet: 'rightrouter'}, 
     {path: 'addadmin', component: AddAdminComponent, outlet: 'rightrouter'},
     {path: 'executor', component: ExecutorComponent, outlet: 'rightrouter'},
     {path: 'seuil', component: SeuilComponent, outlet: 'rightrouter'},
     {path: 'influence', component: InfluenceComponent, outlet: 'rightrouter'},
-    {path: 'regression', component: RegressionComponent, outlet: 'rightrouter'}
+    {path: 'regression', component: RegressionComponent, outlet: 'rightrouter'},
+    {path: 'sourcedata', component: SourceDataComponent, outlet: 'rightrouter'}
   ]
   }
 ]
@@ -56,7 +60,7 @@ const routes : Routes = [
     FavorisComponent, 
     PaginationComponent, 
     BadgeComponent, 
-    UsersAdminComponent, UserListComponent, AddAdminComponent, ExecutorComponent, SeuilComponent, InfluenceComponent, RegressionComponent,
+    UsersAdminComponent, UserListComponent, AddAdminComponent, ExecutorComponent, SeuilComponent, InfluenceComponent, RegressionComponent, NewsAdminComponent, SourceDataComponent,
   ],
   imports: [
     BrowserModule,

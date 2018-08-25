@@ -20,9 +20,7 @@
     <div *ngIf="valueRegression.errors?.pattern"> Le champs ne peut contenir qu'un nombre entier (1 - 999) </div>
   </div>
 
-  <button style="margin-top: 20px;" class="btn btn-warning" [disabled]="!fRegression.valid"
-    (click)="updateRegression()"
-  > 
+  <button style="margin-top: 20px;" class="btn btn-warning" [disabled]="!fRegression.valid" (click)="updateRegression()"> 
     Changer 
   </button>
 </form>

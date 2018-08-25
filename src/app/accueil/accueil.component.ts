@@ -84,4 +84,11 @@ export class AccueilComponent implements OnInit {
       {relativeTo: this.route, skipLocationChange: true}
     )
   }
+
+  manageNews(){
+    this.router.navigate(
+      [{outlets: {'leftrouter':['newsadmin']}}],
+      {relativeTo: this.route, skipLocationChange: true}
+    )
+  }
 }

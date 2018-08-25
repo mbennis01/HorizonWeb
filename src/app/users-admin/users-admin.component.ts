@@ -36,18 +36,4 @@ export class UsersAdminComponent implements OnInit {
       {relativeTo: this.route.parent, skipLocationChange: true}
     )
   }
-
-  goInfluence(){
-    this.router.navigate(
-      [{outlets: {'rightrouter':['influence']}}],
-      {relativeTo: this.route.parent, skipLocationChange: true}
-    )
-  }
-
-  goRegression(){
-    this.router.navigate(
-      [{outlets: {'rightrouter':['regression']}}], 
-      {skipLocationChange: true, relativeTo: this.route.parent}
-    )
-  }
 }

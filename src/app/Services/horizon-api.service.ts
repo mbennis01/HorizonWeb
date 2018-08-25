@@ -301,4 +301,28 @@ export class HorizonApiService {
     setNewPoint(value : number){
       return this.http.put(this.url+"/newpoint/"+value, {});
     }
+
+    getSources(){
+      return this.http.get(this.url+"/sources");
+    }
+
+    getSourceScore(source : string){
+      return this.http.get(this.url+"/sources/"+source);
+    }
+
+    addBonusToSource(source : string, bonus : number){
+      return this.http.post(this.url+"/"+source+"/"+bonus, {});
+    }
+
+    sourceCounter(source : string){
+      return this.http.get(this.url+"/sources/counter/"+source);
+    }
+
+    getNewBysource(source : string){
+      return this.http.get(this.url+"/sources/new/"+source);
+    }
+
+    getOldBysource(source : string){
+      return this.http.get(this.url+"/sources/old/"+source);
+    }
 }

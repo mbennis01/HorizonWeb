@@ -1,0 +1,57 @@
+<div id="wrapper">
+
+    <h2 class="jumbotron"> Informations sur les sources </h2>
+
+    <button class="btn btn-sm btn-warning" (click)="update()" > Rafraîchir <i class="fa fa-refresh" aria-hidden="true"></i> </button>
+    
+    <table class="table table-dark table-bordered table-stripped">
+      <tr>
+        <th>Nom</th>
+        <th>Nombre d'articles</th>
+        <th>Articles Nouveaux</th>
+        <th>Articles Anciens</th>
+        <th>Score total</th>
+      </tr>
+    
+      <tr *ngFor="let source of sources">
+        <td> {{ source.nom }} </td>
+        <td> {{ source.counter}} </td>
+        <td> {{ source.newpost}} </td>
+        <td> {{source.oldpost}} </td>
+        <td> {{source.score }} </td>
+      </tr>
+    
+    </table>
+    
+    <div class="alert alert-info">
+      Ci-dessous, ajouter un bonus à tous les articles d'une source. <br>
+      <span *ngIf="message">{{message}}</span>
+    </div>
+    
+    <form [formGroup]="fBonus">
+      <div class="form-group" [formGroup]="sourceGroup">
+          <label for="source"> Source : </label>
+          <select formControlName="source" id="source" class="form-control">
+            <option *ngFor="let source of sources" [value]="source.nom"> {{source.nom}} </option>
+          </select>
+    
+          <div class="alert alert-danger" *ngIf="source.touched && source.invalid">
+            <div *ngIf="source.errors?.required"> Ne peut pas être vide </div>
+          </div>
+      </div>
+    
+      <div class="form-group" [formGroup]="bonusGroup">
+          <label for="bonus"> Bonus / Malus : </label>
+          <input type="text" formControlName="bonus" id="bonus" class="form-control">
+          
+          <div class="alert alert-danger" *ngIf="bonus.touched && bonus.invalid">
+            <div *ngIf="bonus.errors?.required"> Ne peut pas être vide </div>
+            <div *ngIf="bonus.errors?.pattern"> Doit être un nombre compris entre (-999 et 999) </div>
+          </div>
+      </div>
+    
+      <button class="btn btn-warning" [disabled]="bonus.invalid || source.invalid" 
+      (click)="addBonusToSource()"> Ajouter </button>
+    </form>
+    
+</div>

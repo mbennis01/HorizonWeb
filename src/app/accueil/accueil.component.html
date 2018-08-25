@@ -4,54 +4,55 @@
       <img [src]="picture" alt="test" id="accueil-userpicture"/>
       <p style="color : white;" id="accueil-username"> {{param.Nom }} </p>
 
-      <button (click)="goToInitial()" 
-      style="color : white; width: 100%; margin: 25px 0 25px 0;" 
-      class="btn btn-sm btn-outline-secondary menu-btn" 
-      type="button">
-        <span class="menu-txt"> Accueil &nbsp; </span><i class="fa fa-home" aria-hidden="true"></i> 
-      </button>
-
-      <button (click)="goToFavoris()" 
-      style="color : white; width: 100%; margin: 0px 0 25px 0;" 
-      class="btn btn-sm btn-outline-secondary menu-btn" 
-      type="button">
-        <span class="menu-txt"> Que vous avez aimé &nbsp; </span><i class="fa fa-heart" aria-hidden="true"></i> 
-      </button>
-
-      <span *ngIf="+authService.currentUser.badge">
-          <button 
-          (click)="goToBadge()"
+      <div class="buttons">
+          <button (click)="goToInitial()" 
+          style="color : white; width: 100%; margin: 25px 0 25px 0;" 
+          class="btn btn-sm btn-outline-secondary menu-btn" 
+          type="button">
+            <span class="menu-txt"> Accueil &nbsp; </span><i class="fa fa-home" aria-hidden="true"></i> 
+          </button>
+    
+          <button (click)="goToFavoris()" 
           style="color : white; width: 100%; margin: 0px 0 25px 0;" 
           class="btn btn-sm btn-outline-secondary menu-btn" 
           type="button">
-            <span class="menu-txt"> Tous vos badges &nbsp; </span><i class="fa fa-certificate" aria-hidden="true"></i> 
-          </button>    
-      </span>
-
-      <span *ngIf="authService.isAdmin()" >
-        <button 
-        (click)="adminToggle()"
-        style="color : white; width: 100%; margin: 0px 0 25px 0;" 
-        class="btn btn-sm btn-outline-secondary menu-btn" 
-        type="button">
-          <span class="menu-txt"> 
-            Administration  &nbsp; </span><i class="fa fa-user-secret" aria-hidden="true"></i>
-            &nbsp; <i class="fa fa-chevron-down" aria-hidden="true" *ngIf="!isAdminToggled" ></i>
-            <i class="fa fa-chevron-up" aria-hidden="true" *ngIf="isAdminToggled" ></i> 
-        </button>    
-      </span>
-
-      <span *ngIf="(isAdminToggled) then adminMenu;">
-      </span>
-
-      <button 
-      (click)="logout()"
-      style="color : white; width: 100%; margin: 0px 0 25px 0;" 
-      class="btn btn-sm btn-outline-secondary menu-btn" 
-      type="button">
-        <span class="menu-txt"> Fermer la session &nbsp; </span><i class="fa fa-power-off" aria-hidden="true"></i> 
-      </button>  
-
+            <span class="menu-txt"> Que vous avez aimé &nbsp; </span><i class="fa fa-heart" aria-hidden="true"></i> 
+          </button>
+    
+          <span *ngIf="+authService.currentUser.badge">
+              <button 
+              (click)="goToBadge()"
+              style="color : white; width: 100%; margin: 0px 0 25px 0;" 
+              class="btn btn-sm btn-outline-secondary menu-btn" 
+              type="button">
+                <span class="menu-txt"> Tous vos badges &nbsp; </span><i class="fa fa-certificate" aria-hidden="true"></i> 
+              </button>    
+          </span>
+    
+          <span *ngIf="authService.isAdmin()" >
+            <button 
+            (click)="adminToggle()"
+            style="color : white; width: 100%; margin: 0px 0 25px 0;" 
+            class="btn btn-sm btn-outline-secondary menu-btn" 
+            type="button">
+              <span class="menu-txt"> 
+                Administration  &nbsp; </span><i class="fa fa-user-secret" aria-hidden="true"></i>
+                &nbsp; <i class="fa fa-chevron-down" aria-hidden="true" *ngIf="!isAdminToggled" ></i>
+                <i class="fa fa-chevron-up" aria-hidden="true" *ngIf="isAdminToggled" ></i> 
+            </button>    
+          </span>
+    
+          <span *ngIf="(isAdminToggled) then adminMenu;">
+          </span>
+    
+          <button 
+          (click)="logout()"
+          style="color : white; width: 100%; margin: 0px 0 25px 0;" 
+          class="btn btn-sm btn-outline-secondary menu-btn" 
+          type="button">
+            <span class="menu-txt"> Fermer la session &nbsp; </span><i class="fa fa-power-off" aria-hidden="true"></i> 
+          </button>  
+      </div>
     </div>
     <div class="col-sm-10" id="accueil-postbar">
       <h2>Horizon News</h2>
@@ -96,10 +97,11 @@
   </span>
 
   <button 
+  (click)="manageNews()"
   style="color : white; width: 80%; margin: 0px 0 25px 0;" 
   class="btn btn-sm btn-outline-secondary menu-btn" 
   type="button">
-    <span class="menu-txt"> Modifier news &nbsp; </span><i class="fa fa-newspaper-o" aria-hidden="true"></i> 
+    <span class="menu-txt"> Articles &nbsp; </span><i class="fa fa-newspaper-o" aria-hidden="true"></i> 
   </button>  
 </ng-template>
 
