@@ -22,7 +22,7 @@
 
 #accueil-userbar{
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 @media only screen and (max-width: 575.9px) {

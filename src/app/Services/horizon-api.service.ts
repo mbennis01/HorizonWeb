@@ -341,4 +341,8 @@ export class HorizonApiService {
     saveShareDetails(ida, idaf, date, idu){
       return this.http.post(this.url+"/sharedetails", {ida: ida, idaf: idaf, date: date, idu: idu})
     }
+
+    getTrackList(id){
+      return this.http.get(this.url+"/tracks/"+id);
+    }
 }

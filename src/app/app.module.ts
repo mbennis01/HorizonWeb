@@ -48,7 +48,7 @@ const routes : Routes = [
     {path: 'regression', component: RegressionComponent, outlet: 'rightrouter'},
     {path: 'sourcedata', component: SourceDataComponent, outlet: 'rightrouter'},
     {path: 'classify', component: ClassifyComponent, outlet: 'rightrouter'},
-    {path: 'track', component: TrackComponent, outlet: 'rightrouter'}
+    {path: 'track/:id/:titre', component: TrackComponent, outlet: 'rightrouter'}
   ]
   }
 ]

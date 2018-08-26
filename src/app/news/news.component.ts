@@ -173,4 +173,15 @@ getLiked(){
       return false; 
     }
   }
+
+  goTrack(id, titre){
+    this.router.navigate(
+      [{outlets: {'rightrouter':['track', id, titre]}}],
+      {skipLocationChange: true, relativeTo: this.route.parent}
+    )
+  }
+
+  get role(){
+    return this.authService.currentUser.Role;
+  }
 }

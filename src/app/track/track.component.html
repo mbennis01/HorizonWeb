@@ -1,3 +1,42 @@
-<p>
-  track works!
-</p>
+<div id="wrapper">
+  <div id="part1">
+    <div class="alert alert-info">
+      Informations sur les partages de l'article : {{ id }} <br>
+      Du titre : << {{ titre }} >>
+    </div>
+    
+    <div class="alert alert-warning">
+      Ci-dessous partages internes depuis l'applications.
+    </div>
+    
+    <table class="table table-dark table-stripped table-bordered" style="font-size: 12px;" *ngIf="tracks?.length">
+      <tr>
+        <td> Identifiant</td>
+        <td> N° Transaction </td>
+        <td> Nom </td>
+        <td> Date </td>
+      </tr>
+    
+      <tr *ngFor="let track of tracks">
+        <td>{{track.Id}}</td>
+        <td> {{track.Idf}} </td>
+        <td>{{track.Name}}</td>
+        <td>{{track.Date}}</td>
+      </tr>
+    </table>
+    
+    <div class="alert alert-danger" *ngIf="tracks?.length == 0">
+      Empty ! :(
+    </div>  
+  </div>
+  <div id="part2">
+    <h2> Tracker une transaction sur facebook </h2>
+
+    <form [formGroup]="fTransaction">
+      <label for="transaction"> N° Transaction </label>
+      <input type="text" class="form-control" placeholder="Coller un N° de transaction ici" id="transaction" formControlName="transaction">
+      <button class="btn btn-warning" (click)=" track()" style="margin-top: 20px;"> Track </button>
+    </form>
+  </div>
+  
+</div>
