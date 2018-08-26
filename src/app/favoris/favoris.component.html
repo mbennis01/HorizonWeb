@@ -12,7 +12,7 @@
     <p>{{ article.Description }}</p>
     <p> {{article.Source}} </p>
 
-    <button class="btn btn-sm btn-primary" (click)="shareOnFacebook(article.Link)">
+      <button class="btn btn-sm btn-primary" (click)="shareOnFacebook(article.Link, article.Id)">
         <span><i class="fa fa-share" aria-hidden="true" ></i></span>
         <span class="btn-txt"> Partage </span>   
       </button>

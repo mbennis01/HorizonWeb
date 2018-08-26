@@ -337,4 +337,8 @@ export class HorizonApiService {
     classification(article){
       return this.http.post(this.url+"/classification", article);
     }
+
+    saveShareDetails(ida, idaf, date, idu){
+      return this.http.post(this.url+"/sharedetails", {ida: ida, idaf: idaf, date: date, idu: idu})
+    }
 }

@@ -26,9 +26,13 @@ export class FbService {
       method: 'share',
      };    
      return this.facebookService.ui(params);  
-   }
+  }
 
-   set objectIdsToFilter(str : string[]){
+  callApi(path){
+    return this.facebookService.api(path);
+  }
+
+  set objectIdsToFilter(str : string[]){
     this._objectIdsToFilter = str; 
   }
 

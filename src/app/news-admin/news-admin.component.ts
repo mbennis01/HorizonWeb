@@ -40,4 +40,11 @@ export class NewsAdminComponent implements OnInit {
       {skipLocationChange: true, relativeTo: this.route.parent}
     )
   }
+
+  goTrack(){
+    this.router.navigate(
+      [{outlets: {'rightrouter':['track']}}], 
+      {skipLocationChange: true, relativeTo: this.route.parent}
+    )
+  }
 }

@@ -96,7 +96,7 @@ export class NewsComponent implements OnInit {
     }
   }
 
-  shareOnFacebook(link){
+  shareOnFacebook(link, ida){
     this.fb.share(link)
     .then((response) => {
       console.log("Then :\n");
@@ -115,6 +115,17 @@ export class NewsComponent implements OnInit {
             console.log( response.json() );
           })
         }
+
+        this.fb.callApi("/me/posts?fields=application,likes,created_time&limit=1")
+        .then((response)=>{
+          let idaf = response.data[0].id; 
+          let date = response.data[0].created_time; 
+          let idu = this.authService.currentUser.Id_user;
+          this.horizonApi.saveShareDetails(ida, idaf, date, idu)
+          .subscribe((response)=>{
+              console.log(response);
+          });
+        });
       }
     })
     .catch((err) => {

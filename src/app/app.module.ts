@@ -28,6 +28,7 @@ import { RegressionComponent } from './regression/regression.component';
 import { NewsAdminComponent } from './news-admin/news-admin.component';
 import { SourceDataComponent } from './source-data/source-data.component';
 import { ClassifyComponent } from './classify/classify.component';
+import { TrackComponent } from './track/track.component';
 
 const routes : Routes = [
   {path: '', component: LoginComponent}, 
@@ -46,7 +47,8 @@ const routes : Routes = [
     {path: 'influence', component: InfluenceComponent, outlet: 'rightrouter'},
     {path: 'regression', component: RegressionComponent, outlet: 'rightrouter'},
     {path: 'sourcedata', component: SourceDataComponent, outlet: 'rightrouter'},
-    {path: 'classify', component: ClassifyComponent, outlet: 'rightrouter'}
+    {path: 'classify', component: ClassifyComponent, outlet: 'rightrouter'},
+    {path: 'track', component: TrackComponent, outlet: 'rightrouter'}
   ]
   }
 ]
@@ -62,7 +64,7 @@ const routes : Routes = [
     FavorisComponent, 
     PaginationComponent, 
     BadgeComponent, 
-    UsersAdminComponent, UserListComponent, AddAdminComponent, ExecutorComponent, SeuilComponent, InfluenceComponent, RegressionComponent, NewsAdminComponent, SourceDataComponent, ClassifyComponent,
+    UsersAdminComponent, UserListComponent, AddAdminComponent, ExecutorComponent, SeuilComponent, InfluenceComponent, RegressionComponent, NewsAdminComponent, SourceDataComponent, ClassifyComponent, TrackComponent,
   ],
   imports: [
     BrowserModule,
