@@ -33,4 +33,11 @@ export class NewsAdminComponent implements OnInit {
       {skipLocationChange: true, relativeTo: this.route.parent}
     )
   }
+
+  goClassify(){
+    this.router.navigate(
+      [{outlets: {'rightrouter':['classify']}}], 
+      {skipLocationChange: true, relativeTo: this.route.parent}
+    )
+  }
 }

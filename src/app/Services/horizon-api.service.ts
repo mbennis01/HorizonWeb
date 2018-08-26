@@ -325,4 +325,16 @@ export class HorizonApiService {
     getOldBysource(source : string){
       return this.http.get(this.url+"/sources/old/"+source);
     }
+
+    getUnclassified(){
+      return this.http.get(this.url+"/unclassified");
+    }
+
+    getCategories(){
+      return this.http.get(this.url+"/categories");
+    }
+
+    classification(article){
+      return this.http.post(this.url+"/classification", article);
+    }
 }

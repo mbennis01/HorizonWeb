@@ -1,0 +1,27 @@
+#wrapper{
+    height: 90vh;
+}
+
+#template-basic{
+    overflow-y: auto;
+    height: 50%;
+}
+
+.accueil-images{
+    width: 50%;
+}
+
+
+.accueil-links{
+    color: #448AFF;
+}
+
+.accueil-links:hover{
+    text-decoration: underline;
+    color: #303F9F;    
+}
+
+#classifyPart{
+    height: 50%;
+    overflow-y: auto;
+}

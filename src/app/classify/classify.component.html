@@ -1,0 +1,51 @@
+<div id="wrapper"> 
+    <div id="template-basic" #fullDiv>
+        <div *ngFor="let article of articles; index as i;" 
+        [style.backgroundColor]="(i % 2) ? '#F9F8F7' : 'white'" 
+        style="margin-top: 15px;"> 
+          <p> {{article.PublishDate}} - <button class="btn btn-success btn-sm" (click)="selectArticle(article)"> Classer </button> </p>
+          <img src="{{article.Image}}" alt="Image broken" class="accueil-images">
+          <p (click)="openLink(article.Link, $event)" class="accueil-links"> {{ article.Titre }} </p> 
+          <p>{{ article.Description }}</p>
+          <p> {{article.Source}}</p>     
+        </div>
+      </div>
+      <!-- <div style="margin: 10px 0 0 0; text-align: center;">
+          <app-pagination (next)="plusUn(fullDiv)" (past)="moinsUn(fullDiv)"></app-pagination>
+      </div> -->
+
+      <div id="classifyPart">
+
+        <h3> Classer votre article </h3>
+
+        <form [formGroup]="fClassify" style="margin-top: 30px;">
+
+          <div class="alert alert-info" *ngIf="message">
+            <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{message}}
+          </div>
+
+          <div class="form-group" [formGroup]="titleGroup">
+              <label for="title"> Titre : </label>
+              <input type="text" formControlName="title" id="title" class="form-control" readonly>
+          </div>
+
+          <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+            Vous devez selectionner un article en cliquant sur le bouton changer.
+          </div>
+
+          <div class="form-group" [formGroup]="categoryGroup">
+              <label for="category"> Categorie : </label>
+              <select formControlName="category" id="category" class="form-control">
+                <option [value]="category.Id" *ngFor="let category of categories"> {{category.Name}} </option>
+              </select>
+          </div>
+
+          <div class="alert alert-danger" *ngIf="category.invalid && category.touched">
+              Vous devez selectionner une catégorie. 
+          </div>
+
+          <button class="btn btn-warning" (click)="classify()" [disabled]="category.invalid || title.invalid"> Valider </button>          
+        </form>
+
+      </div>
+</div>
