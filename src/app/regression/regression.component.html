@@ -1,30 +1,38 @@
-<h2> Gérer la regression temporelle.</h2>
+<div id="wrapper">
 
-<div class="alert alert-info">
-  La regression temporelle, gère le bonus du score qui est attribué à un nouveau article. <br>
-   Cette valeur représente également le bonus qui sera retirer lors de son passage de "nouveau" à "Non nouveau".
-</div>
+    <h2> Gérer la regression temporelle.</h2>
 
-<div class="alert alert-success">
-  Valeur actuelle : {{ value }}
-</div>
-
-<form [formGroup]="fRegression" >
-  <div class="form-group">
-    <label for="value"> Valeur </label>
-    <input type="text" formControlName="valueRegression" id="value" class="form-control"/>
-  </div>
-
-  <div class="alert alert-danger" *ngIf="valueRegression.touched && valueRegression.invalid">
-    <div *ngIf="valueRegression.errors?.required"> Le champ ne peut pas être vide !</div>
-    <div *ngIf="valueRegression.errors?.pattern"> Le champs ne peut contenir qu'un nombre entier (1 - 999) </div>
-  </div>
-
-  <button style="margin-top: 20px;" class="btn btn-warning" [disabled]="!fRegression.valid" (click)="updateRegression()"> 
-    Changer 
-  </button>
-</form>
-
-<div class="alert alert-info" *ngIf="message" style="margin-top: 20px;">
-  {{ message }}
+    <div class="alert alert-info">
+      La regression temporelle, gère le bonus du score qui est attribué à un nouveau article. <br>
+       Cette valeur représente également le bonus qui sera retirer lors de son passage de "nouveau" à "Non nouveau".
+    </div>
+    
+    <div class="alert alert-success">
+      Valeur actuelle : {{ value }}
+    </div>
+    
+    <form [formGroup]="fRegression" >
+      <div class="form-group">
+        <label for="value"> Valeur </label>
+        <input type="text" formControlName="valueRegression" id="value" class="form-control"/>
+      </div>
+    
+      <div class="alert alert-danger" *ngIf="valueRegression.touched && valueRegression.invalid">
+        <div *ngIf="valueRegression.errors?.required"> Le champ ne peut pas être vide !</div>
+        <div *ngIf="valueRegression.errors?.pattern"> Le champs ne peut contenir qu'un nombre entier (1 - 999) </div>
+      </div>
+    
+      <button style="margin-top: 20px;" class="btn btn-warning" [disabled]="!fRegression.valid" (click)="updateRegression()"> 
+        Changer 
+      </button>
+    </form>
+    
+    <div class="alert alert-info" *ngIf="message" style="margin-top: 20px;">
+      {{ message }}
+    </div>
+    
+    <div class="alert alert-danger">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Changer la regression, changera également le score des articles tagués new,
+        en leur retirant la différence. 
+    </div>
 </div>

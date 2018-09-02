@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 })
 export class HorizonApiService {
 
-  url : string = "https://horizonapp.fr/backup/api/articles/";
+  url : string = "http://localhost:64758/api/articles/";
   constructor(private http : Http){}
 
   checkUser(idu : string, nom : string){

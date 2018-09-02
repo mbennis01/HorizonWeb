@@ -37,6 +37,12 @@
       <input type="text" class="form-control" placeholder="Coller un N° de transaction ici" id="transaction" formControlName="transaction">
       <button class="btn btn-warning" (click)=" track()" style="margin-top: 20px;"> Track </button>
     </form>
+
+    <div class="alert alert-warning" *ngIf="likeCount != undefined || commentCount != undefined || sharedPosts != undefined">
+      <h4> Données sur Facebook : </h4>
+      Nombre de like : {{ likeCount }} <br>
+      Nombre de commentaire : {{ commentCount }} <br>
+      Nombre de repartage sur facebook : {{ sharedPosts }}
+    </div>
   </div>
-  
 </div>

@@ -46,7 +46,7 @@ export class NewsComponent implements OnInit {
     let index = this.likedArticles.indexOf(article.Id);
     if( index != -1){
       this.likedArticles.splice(index, 1);
-      if(this.authService.currentUser.badge == "1"){
+      if(this.authService.currentUser.badge == "1" && article.Categorie != "Non classé"){
         console.log("dislike badge");
         this.horizonApi.dislikeBadge(this.authService.currentUser.Id_user, article.Id)
         .subscribe((response)=>{
@@ -66,7 +66,7 @@ export class NewsComponent implements OnInit {
         })
       }
     }else{
-      if(this.authService.currentUser.badge == "1"){
+      if(this.authService.currentUser.badge == "1" && article.Categorie != "Non classé"){
         this.likedArticles.push(article.Id);
         console.log("like badge");
         this.horizonApi.doLikeBadge(article.Link, this.authService.currentUser.Id_user)

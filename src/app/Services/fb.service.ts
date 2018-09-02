@@ -32,6 +32,16 @@ export class FbService {
     return this.facebookService.api(path);
   }
 
+  callApiReactions(idf){
+    let holder : string = idf+"?fields=comments,likes";
+    return this.facebookService.api(holder);
+  }
+
+  callApiSharedPosts(idf){
+    let holder : string = idf+"/sharedposts";
+    return this.facebookService.api(holder);
+  }
+
   set objectIdsToFilter(str : string[]){
     this._objectIdsToFilter = str; 
   }

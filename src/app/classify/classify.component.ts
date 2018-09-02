@@ -61,6 +61,7 @@ export class ClassifyComponent implements OnInit {
     this.selected.Categorie = this.category.value;
     this.horizonApi.classification(this.selected)
     .subscribe((response)=>{
+      console.log(response.json());
       this.message = response.json();
       setTimeout(()=>{this.message = ''}, 5000);
       this.articles.splice(this.indexSelected, 1);
